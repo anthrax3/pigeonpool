@@ -36,11 +36,17 @@
         "async": "^2.5.0",
         "base58-native": "^0.1.4",
         "bignum": "^0.12.5",
+        "dotenv": "^5.0.1",
+        "express": "^4.13.4",
         "mongodb": "^3.6.3",
+        "mongoose": "^5.0.14",
         "stratum-pool": "git://github.com/pigeoncoin/node-merged-pool.git"
     },
     "engines": {
         "node": ">=9.7.1"
+    },
+    "scripts": {
+        "start": ""
     }
 }
 

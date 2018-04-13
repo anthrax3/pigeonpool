@@ -22,7 +22,7 @@ npm install
 
 #### Configuration
 
-
+Create a .env file in the root directory.  You will need to specify the specific environment variables here.  Use .env.example as an example
 
 
 Credits
