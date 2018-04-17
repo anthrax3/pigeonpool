@@ -14,41 +14,83 @@
         "litecoin",
         "scrypt",
         "multipool",
-        "multicoin",
+        "multicoin"
     ],
     "homepage": "https://github.com/pigeoncoin/pigeonpool",
     "bugs": {
         "url": "https://github.com/pigeoncoin/pigeonpool/issues"
     },
-    "license": "GPL-2.0",
-    "author": "Daniel Beal",
+    "license": "MIT",
+    "author": "SpideryWookie",
     "contributors": [
         "spiderywookie",
         "foxer666 - for his updated multi-hashing",
         "nzsquirrell - for his updated stratum-merged-pool"
     ],
-    "main": "lib/index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/pigeoncoin/pigeonpool.git"
     },
+    "devDependencies": {
+        "babel-core": "6.18.2",
+        "babel-eslint": "7.1.0",
+        "babel-loader": "6.2.7",
+        "babel-plugin-react-transform": "2.0.2",
+        "babel-preset-es2015": "6.18.0",
+        "babel-preset-react": "6.16.0",
+        "eslint": "3.3.1",
+        "eslint-plugin-babel": "3.2.0",
+        "eslint-plugin-react": "6.1.2",
+        "internal-ip": "1.2.0",
+        "jest": "*",
+        "react": "15.3.0",
+        "react-dom": "15.3.0",
+        "react-fontawesome": "1.2.0",
+        "react-router": "2.8.1",
+        "react-router-redux": "4.0.7",
+        "react-toolbox": "1.2.5"
+    },
     "dependencies": {
         "app-root-path": "*",
         "async": "^2.5.0",
-        "base58-native": "^0.1.4",
-        "bignum": "^0.12.5",
+        "cookie-parser": "~1.4.3",
         "dotenv": "^5.0.1",
-        "express": "^4.13.4",
-        "mongodb": "^3.6.3",
-        "morgan": "*",
-        "stratum-pool": "git://github.com/pigeoncoin/node-merged-pool.git",
+        "express": "4.13.3",
+        "mongodb": "^3.0.6",
+        "mongoose": "*",
+        "morgan": "~1.9.0",
+        "react-redux": "4.4.5",
+        "redux": "3.6.0",
+        "redux-actions": "^2.0.1",
+        "redux-immutable": "^4.0.0",
         "winston": "*"
     },
     "engines": {
         "node": ">=9.7.1"
     },
     "scripts": {
-        "start": ""
+        "start": "node app.js",
+        "build": "./node_modules/.bin/webpack --config webpack.config --history-api-fallback --bail",
+        "watch": "webpack-dev-server --inline --hot",
+        "lint": "./node_modules/.bin/eslint app ./",
+        "test": "jest src",
+        "coverage": "jest --collectCoverageFrom=src/**.js --coverage src"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "node": true,
+            "jest/globals": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 6,
+            "sourceType": "module",
+            "ecmaFeatures": {
+                "jsx": true
+            }
+        },
+        "rules": {
+            "semi": 2
+        }
     }
 }
-
